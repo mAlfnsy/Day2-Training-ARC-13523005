@@ -7,15 +7,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         const productList = document.getElementById("product-list");
         const closeInfo = document.getElementById("close-info");
         
-        function showProductInfo(product) {
-            document.getElementById("info-img").src = product.thumbnail;
-            document.getElementById("info-title").textContent = product.title;
-            document.getElementById("info-description").textContent = product.description;
-            document.getElementById("info-price").textContent = product.price;
-            document.getElementById("info-rating").textContent = product.rating;
-            document.getElementById("product-info").style.display = "block";
-        }
-        
         products.forEach(product => {
             const productCard = document.createElement("div");
             productCard.classList.add("card");
@@ -39,3 +30,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Gagal mengambil data produk", error);
     }
 });
+
+function showProductInfo(product) {
+    document.getElementById("info-img").src = product.thumbnail;
+    document.getElementById("info-title").textContent = product.title;
+    document.getElementById("info-description").textContent = product.description;
+    document.getElementById("info-price").textContent = product.price;
+    document.getElementById("info-rating").textContent = product.rating;
+    document.getElementById("product-info").style.display = "block";
+}
